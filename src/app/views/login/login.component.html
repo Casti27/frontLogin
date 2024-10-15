@@ -16,5 +16,22 @@
                 </div>
             </form>
         </div>
+        <!-- TODO: Cambiar esto por una imagen y ocultarla -->
+        <div class="col-11 col-lg-5 imagen-container">
+            <form class="border p-4 rounded shadow" [formGroup]="loginForm">
+                <h2 class="text-center mb-4">Inicio de sesión</h2>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control custom-rounded"  placeholder="ejemplo@dominio.com" required formControlName="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control custom-rounded" placeholder="Crea una contraseña segura" required formControlName="password">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary mb-3" (click)="submit()" [disabled]="!   loginForm.valid">Ingresar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
