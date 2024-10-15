@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
 
   subscriptionNotification() {
     const showTime = 5000;
-    this.notificationService.getToast().subscribe({
+    this.notificationService.getNotification().subscribe({
       next: (data: NotificationData) => {
         this.notification.set({ ...data });
         setTimeout(() => {
@@ -42,6 +42,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.subscriptionNotification();
   }
 }

@@ -23,14 +23,14 @@ export class NotificationService {
     ...this.notificationDataInitialValue,
   });
 
-  setToast(newToast: NotificationData): void {
+  setNotification(newToast: NotificationData): void {
     this.notification.next({
       ...this.notificationDataInitialValue,
       ...newToast,
     });
   }
 
-  getToast(): Observable<NotificationData> {
+  getNotification(): Observable<NotificationData> {
     return this.notification.asObservable();
   }
 }

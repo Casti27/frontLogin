@@ -5,13 +5,14 @@ import { inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiService {
-  private URL_API = 'https://bxmxjr47-80.use2.devtunnels.ms';
-  // private URL_API = 'local';
+  private URL_API = 'https://bxmxjr47-80.use2.devtunnels.ms/check_login.php';
+  // private URL_API = 'http://localhost:80/';
 
   /**
    * Se importa el servicio de angular para hacer peticiones al API
    */
   public http = inject(HttpClient);
+
   public httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

@@ -32,12 +32,14 @@ export class LoginComponent {
    * Esta función es la que se ejecuta cuando se le da continuar
    */
   submit() {
+    debugger;
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
+      debugger;
       this.apiService.postCheckLogin(email, password).subscribe({
         next: () => {
           /** Crear aqui una notificación o llevar al home */
-          this.notificationService.setToast({
+          this.notificationService.setNotification({
             status: 'success',
             title: `Ingreso Exitoso`,
             description: '',
@@ -47,7 +49,7 @@ export class LoginComponent {
         },
         error: () => {
           /** Si falla, mostrar un mensaje de error */
-          this.notificationService.setToast({
+          this.notificationService.setNotification({
             status: 'danger',
             title: `Ingreso Fallido`,
             description: 'Reintente nuevamente por favor',
